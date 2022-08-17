@@ -51,7 +51,7 @@ function wham() {
 		echo "Download wham_noise into $storage_dir"
 		# If downloading stalls for more than 20s, relaunch from previous state.
 		wget -c --tries=0 --read-timeout=20 https://storage.googleapis.com/whisper-public/wham_noise.zip -P $storage_dir
-		unzip -qn $storage_dir/wham_noise.zip -d $storage_dir
+		tar -xzf $storage_dir/wham_noise.zip -d $storage_dir
 		rm -rf $storage_dir/wham_noise.zip
 	fi
 }
